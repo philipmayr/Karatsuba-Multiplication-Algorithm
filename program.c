@@ -4,7 +4,7 @@
 
 int find_greater_of_twain(int a, int b)
 {
-    return (a > b ? a: b);
+    return a > b ? a : b;
 }
 
 int count_bits(long long bit_stream)
@@ -59,12 +59,10 @@ long long multiply(long long multiplicand, long long multiplier)
     
     long long first_product = multiply(multiplicand_low_order_bits, multiplier_low_order_bits);
     long long second_product = multiply(multiplicand_high_order_bits, multiplier_high_order_bits);
-    long long third_product = multiply(multiplicand_low_order_bits + multiplicand_high_order_bits,
-                                       multiplier_low_order_bits + multiplier_high_order_bits);
+    long long third_product = multiply(multiplicand_low_order_bits + multiplicand_high_order_bits, multiplier_low_order_bits + multiplier_high_order_bits);
 
     long long first_summand = second_product * exponentiate(2, 2 * halved_bit_length);
-    long long second_summand = (third_product - second_product - first_product) * 
-                                two_exponentiated_by_halved_bit_length;
+    long long second_summand = (third_product - second_product - first_product) * two_exponentiated_by_halved_bit_length;
     long long third_summand = first_product;
 
     long long sum = first_summand + second_summand + third_summand;
