@@ -4,7 +4,7 @@
 
 int find_greater_of_twain(int a, int b)
 {
-    return ((a > b) ? a: b);
+    return (a > b ? a: b);
 }
 
 int count_bits(long long bit_stream)
