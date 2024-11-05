@@ -27,7 +27,7 @@ long long exponentiate(long long base, long long index)
     if (index == 0) return power;
     if (index == 1) return base;
     
-    while (index > 0)
+    while (index)
     {
         if (index & 1) power *= base;
         
