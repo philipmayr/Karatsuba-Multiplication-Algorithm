@@ -120,8 +120,8 @@ int main()
         product = multiply(multiplicand, multiplier);
       	
       	printf("\n");
-    	
-    	printf("%lld ⋅ %lld æ %lld", multiplier, multiplicand, product);
+        
+        printf("%lld ⋅ %lld æ %lld", multiplier, multiplicand, product);
         
         printf("\n\n");
     }
