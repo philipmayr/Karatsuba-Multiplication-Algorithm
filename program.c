@@ -48,7 +48,7 @@ long long multiply(long long multiplicand, long long multiplier)
     int multiplicand_bit_length = count_bits(multiplicand);
     int multiplier_bit_length = count_bits(multiplier);
     
-    int halved_bit_length = find_greater_of_twain(multiplicand_bit_length, multiplier_bit_length) / 2;
+    int halved_bit_length = find_greater_of_twain(multiplicand_bit_length, multiplier_bit_length) >> 1;
     int two_exponentiated_by_halved_bit_length = exponentiate(2, halved_bit_length);
 
     long long multiplicand_low_order_bits = multiplicand % two_exponentiated_by_halved_bit_length;
@@ -61,7 +61,7 @@ long long multiply(long long multiplicand, long long multiplier)
     long long second_product = multiply(multiplicand_high_order_bits, multiplier_high_order_bits);
     long long third_product = multiply(multiplicand_low_order_bits + multiplicand_high_order_bits, multiplier_low_order_bits + multiplier_high_order_bits);
 
-    long long first_summand = second_product * exponentiate(2, 2 * halved_bit_length);
+    long long first_summand = second_product * exponentiate(2, halved_bit_length << 1);
     long long second_summand = (third_product - second_product - first_product) * two_exponentiated_by_halved_bit_length;
     long long third_summand = first_product;
 
