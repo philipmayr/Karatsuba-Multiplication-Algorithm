@@ -116,10 +116,10 @@ int main()
       	}
       
       	multiplier = input;
-
+        
         product = multiply(multiplicand, multiplier);
-      	
-      	printf("\n");
+        
+        printf("\n");
         
         printf("%lld ⋅ %lld æ %lld", multiplier, multiplicand, product);
         
